@@ -8,12 +8,9 @@ import glob
 import os
 from pathlib import Path
 
-#STEP1 - Read image and define pixel size
-#img = cv2.imread("image/grains1.jpg", -1)
-
 clusterlist = []
 
-img_dir = "images" # Enter Directory of all images  
+img_dir = "data" # Enter Directory of all images  
 data_path = os.path.join(img_dir,'*g') 
 files = glob.glob(data_path) 
 images = [] 
@@ -98,7 +95,7 @@ propList = ['Area',
     
 
 output_file = open('image_measurements.csv', 'w')
-output_file.write("Image" + "Grain" + ",".join(propList) + '\n') #join strings in array by commas, leave first cell blank
+output_file.write("Image," + "Grain," + ",".join(propList) + '\n') #join strings in array by commas, leave first cell blank
 #First cell blank to leave room for header (column names)
 
 imageNumber = 0
